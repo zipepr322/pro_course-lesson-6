@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson 6</title>
+</head>
+<body>
+    <script>
+        // Дана функция:
+        //
+        //     function f (a, b, c) {
+        //         function sum (a, b) {
+        //             return a + b;
+        //         }
+        //     }
+        // Перепишите её следующим образом:
+        //
+        //     Если аргументы a и b не переданы, они равны по умолчанию 2 и 3 соответсвенно.
+        //     Если аргумент c передан и он является функцией, то он выполняется после вызова функции sum.
+        //     Функция f должны возвращать результат функции аргумента c, если он есть, либо результат функции sum.
+//----------------------------------------------------------------------------------------------------------------------------
+
+            // function secondFunc() {
+            //     return 80
+            // }
+            //
+            // function f (a, b, c) {
+            //     function sum(a = 2, b = 3) {
+            //         return a+b
+            //     }
+            //     if(typeof c!=='function') {
+            //         return sum(a,b)
+            //     }
+            //     else return sum(a,b)+secondFunc()
+            // }
+            // console.log("это с третьим аргументом функцией----->    "+f(50,70,secondFunc));
+            // console.log("это без----->    "+f(50,70));
+            // console.log("это без аргументов вообще----->    "+f())
+
+
+
+// ----------------------------------------------Task 2--------------------------------------------------------------------------------
+//         Дано массив строк array. В каждой необходимо найти позицию совпадения match.
+//         Читаем метод indexOf() – https://www.w3schools.com/jsref/jsref_indexof.asp, https://learn.javascript.ru/array-methods#poisk-v-massive
+//         Все совпадения сохранить в строку через разделитель.
+//         match ="hello";
+//         array = ["1234hello", "hellohd;lfmg", "45yu89egrhellowegojih", "dfhghello", ",bnsdklb"];
+//         результат: "4, 0, 9, 4"
+//--------------------------------------------------------------------------------------------------------------------------------------
+        array = ["1234hello", "hellohd;lfmg", "45yu89egrhellowegojih", "dfhghello", ",bnsdklb"];
+        match ="hello";
+
+        for (i=0,matchArr=[],result=0;  i<array.length; i++){
+            temp=array[i] ;
+            if (temp.indexOf(match) > -1){
+                matchArr.push(temp.indexOf(match))
+            }
+            result=matchArr.join()     // Можно обойтись и без это строчки, и выводить сразу console.log(matchArr.join())
+        }
+        console.log('Результат:  '+result);
+
+
+    </script>
+</body>
+</html>
